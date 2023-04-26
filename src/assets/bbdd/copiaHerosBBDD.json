@@ -1,0 +1,154 @@
+{
+    "heros": [
+        {
+            "id": 1,
+            "nombre": "Iron Man",
+            "habilidad": "Inteligencia y tecnología avanzada"
+        },
+        {
+            "id": 2,
+            "nombre": "Spider-Man",
+            "habilidad": "Agilidad y capacidad para escalar edificios"
+        },
+        {
+            "id": 3,
+            "nombre": "Batman",
+            "habilidad": "Inteligencia y habilidades de lucha"
+        },
+        {
+            "id": 4,
+            "nombre": "Superman",
+            "habilidad": "Fuerza sobrehumana, invulnerabilidad y supervelocidad"
+        },
+        {
+            "id": 5,
+            "nombre": "Wonder Woman",
+            "habilidad": "Fuerza sobrehumana, habilidades de lucha y habilidades de vuelo"
+        },
+        {
+            "id": 6,
+            "nombre": "Flash",
+            "habilidad": "Supervelocidad y habilidades de regeneración"
+        },
+        {
+            "id": 7,
+            "nombre": "Hulk",
+            "habilidad": "Fuerza sobrehumana y regeneración"
+        },
+        {
+            "id": 8,
+            "nombre": "Capitán América",
+            "habilidad": "Habilidades de lucha y fuerza sobrehumana"
+        },
+        {
+            "id": 9,
+            "nombre": "Thor",
+            "habilidad": "Fuerza sobrehumana, control del clima y capacidad de volar"
+        },
+        {
+            "id": 10,
+            "nombre": "Aquaman",
+            "habilidad": "Superfuerza, habilidades de lucha y capacidad para respirar bajo el agua"
+        },
+        {
+            "id": 11,
+            "nombre": "Green Lantern",
+            "habilidad": "Capacidad de crear objetos con la mente y habilidades de vuelo"
+        },
+        {
+            "id": 12,
+            "nombre": "Doctor Strange",
+            "habilidad": "Habilidades mágicas y conocimiento de las artes místicas"
+        },
+        {
+            "id": 13,
+            "nombre": "Black Widow",
+            "habilidad": "Habilidades de lucha y espionaje"
+        },
+        {
+            "id": 14,
+            "nombre": "Thor Girl",
+            "habilidad": "Fuerza sobrehumana, control del clima y capacidad de volar"
+        },
+        {
+            "id": 15,
+            "nombre": "Daredevil",
+            "habilidad": "Agilidad, sentidos mejorados y habilidades de lucha"
+        },
+        {
+            "id": 16,
+            "nombre": "Wolverine",
+            "habilidad": "Regeneración, garras de adamantium y sentidos mejorados"
+        },
+        {
+            "id": 17,
+            "nombre": "Storm",
+            "habilidad": "Control del clima y habilidades de vuelo"
+        },
+        {
+            "id": 18,
+            "nombre": "Beast",
+            "habilidad": "Fuerza sobrehumana, agilidad y habilidades intelectuales"
+        },
+        {
+            "id": 19,
+            "nombre": "Cyclops",
+            "habilidad": "Rayos ópticos controlados a través de un visor"
+        },
+        {
+            "id": 20,
+            "nombre": "Jean Grey",
+            "habilidad": "Telepatía y habilidades psiónicas"
+        },
+        {
+            "id": 21,
+            "nombre": "Rogue",
+            "habilidad": "Absorción de habilidades y fuerza de otros seres"
+        },
+        {
+            "id": 22,
+            "nombre": "Gambit",
+            "habilidad": "Carga cinética y habilidades de lucha"
+        },
+        {
+            "id": 23,
+            "nombre": "Nightcrawler",
+            "habilidad": "Habilidades de teletransportación y habilidades de lucha"
+        },
+        {
+            "id": 24,
+            "nombre": "Beast Boy",
+            "habilidad": "Habilidad de transformarse en animales y fuerza sobrehumana"
+        },
+        {
+            "id": 25,
+            "nombre": "Green Arrow",
+            "habilidad": "Habilidad con el arco y habilidades de lucha"
+        },
+        {
+            "id": 26,
+            "nombre": "Cyborg",
+            "habilidad": "Habilidades tecnológicas y fuerza sobrehumana"
+        },
+        {
+            "id": 27,
+            "nombre": "Robin",
+            "habilidad": "Habilidades acrobáticas y habilidades de lucha"
+        },
+        {
+            "id": 28,
+            "nombre": "Supergirl",
+            "habilidad": "Fuerza sobrehumana, invulnerabilidad y supervelocidad"
+        },
+        {
+            "id": 29,
+            "nombre": "Catwoman",
+            "habilidad": "Habilidades de lucha y sigilo"
+        },
+        {
+            "id": 30,
+            "nombre": "Ant-Man",
+            "habilidad": "Capacidad de encogerse y aumentar su fuerza"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+<div class="content">
+    <div class="content__zone" *ngIf="!(loadingHeros$ | async);else loading">
+        <div class="content__zone__filter-zone" [formGroup]="formFilterHero">
+            <div class="content__zone__filter-zone__title">
+                <span>Filtros</span>
+                <mat-icon>filter_alt</mat-icon>
+            </div>
+            <mat-form-field class="content__zone__filter-zone__field">
+                <mat-label>ID Heroe</mat-label>
+                <input matInput formControlName="heroId">
+            </mat-form-field>
+            <mat-form-field class="content__zone__filter-zone__field">
+                <mat-label>Nombre heroe</mat-label>
+                <input matInput formControlName="heroName">
+            </mat-form-field>
+        </div>
+        <div class="content__zone__table-zone">
+            <table mat-table class="content__zone__table-zone__table" [dataSource]="dataSource">
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef> Id </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="ability">
+                    <th mat-header-cell *matHeaderCellDef> Habilidad </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ability}} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-icon class="content__zone__table-zone__table__icon"
+                            (click)="editHero(element.id)">edit</mat-icon>
+                        <mat-icon class="content__zone__table-zone__table__icon"
+                            (click)="deleteHero(element.id)">delete</mat-icon>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" [attr.colspan]="displayedColumns.length">
+                        No hay resultados para esta busqueda
+                    </td>
+                </tr>
+            </table>
+
+            <mat-paginator class="content__zone__table-zone__paginator" [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]" *ngIf="dataSource.data" [length]="dataSource.data.length">
+            </mat-paginator>
+
+        </div>
+        <div class="content__zone__add-zone">
+            <button class="content__zone__add-zone__button-add" (click)="newHero()">
+                <mat-icon class="content__zone__add-zone__button-add__icon">add</mat-icon>
+            </button>
+        </div>
+
+    </div>
+    <ng-template #loading>
+        <div class="content__loading">
+            <mat-spinner [color]="'warn'"></mat-spinner>
+        </div>
+    </ng-template>
+</div>

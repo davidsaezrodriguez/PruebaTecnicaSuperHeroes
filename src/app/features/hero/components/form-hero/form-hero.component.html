@@ -1,0 +1,23 @@
+<div class="content">
+    <div class="content__form-zone">
+        <form class="content__form-zone__form" [formGroup]="heroForm">
+            <mat-form-field class="content__form-zone__form__field" appearance="fill">
+                <mat-label>Nombre heroe</mat-label>
+                <input matInput formControlName="name" upperCase>
+            </mat-form-field>
+            <mat-form-field class="content__form-zone__form__field" appearance="fill">
+                <mat-label>Habilidad del heroe</mat-label>
+                <input matInput formControlName="ability">
+            </mat-form-field>
+
+        </form>
+        <div class="content__form-zone__button-zone">
+            <button class="content__form-zone__button-zone__button" mat-raised-button (click)="createHero()"
+                *ngIf="!editMode" [disabled]="!heroForm.valid">Crear
+                heroe</button>
+            <button class="content__form-zone__button-zone__button" mat-raised-button (click)="updateHero()"
+                *ngIf="editMode" [disabled]="!heroForm.valid">Modificar
+                heroe</button>
+        </div>
+    </div>
+</div>
