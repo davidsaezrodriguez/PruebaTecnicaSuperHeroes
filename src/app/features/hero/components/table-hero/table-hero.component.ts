@@ -7,6 +7,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 // Angular material
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
 // Models
 import { Hero } from '../../models/hero.model';
 // Akita
@@ -14,6 +15,8 @@ import { HeroActions } from '../../state/hero.actions';
 import { HeroQuery } from '../../state/hero.query';
 // Enums
 import { NavigationLink } from 'src/app/core/enums/navigation-links';
+import { ConfirmDialogComponent } from 'src/app/shared/dialogs/confirm/confirm-dialog.component';
+import { ConfirmDialogData } from 'src/app/shared/dialogs/confirm/models/data-confirm-dialog.model';
 
 @Component({
   selector: 'table-hero',
@@ -35,7 +38,8 @@ export class TableHeroComponent implements OnInit, OnDestroy {
   constructor(
     private heroActions: HeroActions,
     private heroQuery: HeroQuery,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -62,7 +66,19 @@ export class TableHeroComponent implements OnInit, OnDestroy {
   }
 
   public deleteHero(id: number): void {
-    this.heroActions.deleteHero(id);
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        title: 'Eliminar heroe',
+        description: 'Con esta accion vas a eliminar el heroe, ¿Estas seguro?',
+        buttonText: 'Eliminar',
+      } as ConfirmDialogData,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.heroActions.deleteHero(id);
+      }
+    });
   }
 
   private loadHeros(): void {
@@ -93,7 +109,6 @@ export class TableHeroComponent implements OnInit, OnDestroy {
 
   private subscribeFilterFormChanges(): void {
     this.formFilterHero.valueChanges.pipe(takeUntil(this.destroy$)).subscribe((form) => {
-      console.log(form);
       let herosFilter: Hero[] = [];
       if (form.heroName) {
         herosFilter = this.heroQuery.getHeroContainStringInName(form.heroName);

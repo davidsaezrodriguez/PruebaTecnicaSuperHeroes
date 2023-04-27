@@ -9,7 +9,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+// Directivas custom
 import { UpperCaseDirective } from './directives/UpperCaseDirective';
+// Components
+import { ConfirmDialogComponent } from './dialogs/confirm/confirm-dialog.component';
 
 const angularMaterial = [
   MatIconModule,
@@ -18,12 +22,16 @@ const angularMaterial = [
   MatProgressSpinnerModule,
   MatInputModule,
   MatButtonModule,
+  MatDialogModule,
 ];
 
 const directives = [UpperCaseDirective];
+
+const components = [ConfirmDialogComponent];
+
 @NgModule({
-  declarations: [...directives],
+  declarations: [...components, ...directives],
   imports: [CommonModule, ReactiveFormsModule, ...angularMaterial],
-  exports: [ReactiveFormsModule, ...angularMaterial, ...directives],
+  exports: [ReactiveFormsModule, ...components, ...angularMaterial, ...directives],
 })
 export class SharedModule {}
